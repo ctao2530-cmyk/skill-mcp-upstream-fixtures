@@ -1,0 +1,34 @@
+{
+  "manifest_version": "0.3",
+  "name": "upstream-mcp-smoke",
+  "version": "1.0.0",
+  "description": "Echo a caller-provided synthetic label over local stdio.",
+  "author": {
+    "name": "Synthetic fixture contributors"
+  },
+  "license": "MIT",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.mjs",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.mjs"
+      ]
+    }
+  },
+  "tools": [
+    {
+      "name": "echo_label",
+      "description": "Return the provided synthetic text label."
+    }
+  ],
+  "compatibility": {
+    "platforms": [
+      "darwin"
+    ],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}
